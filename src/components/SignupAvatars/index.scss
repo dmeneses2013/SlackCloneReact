@@ -1,0 +1,31 @@
+.avatar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 450px;
+  margin: 30px auto 0 auto;
+  .avatar {
+    flex: 1 0 24%;
+    margin-bottom: 24px;
+    width: 60px;
+    height: 60px;
+      &:hover {
+        cursor: pointer;
+        background: darken(white, 4%);
+        }
+  }
+}
+
+.avatar-selected {
+  flex: 1 0 24%;
+  margin-bottom: 24px;
+  width: 60px;
+  height: 60px;
+  background: grey;
+  border: yellow 1px solid;
+  &:hover {
+    cursor: pointer;
+    background: darken(grey, 2%);
+    }
+}
