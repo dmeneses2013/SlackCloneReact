@@ -48,7 +48,6 @@
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
     "babel-preset-flow": "^6.23.0",
-    "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-flowtype": "^3.4.2",
     "eslint-plugin-import": "^2.16.0",
