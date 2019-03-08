@@ -93,7 +93,7 @@ const validate = (values) => {
   if (!values.username) {
     errors.username = 'Required';
   } else if  (values.username.length > 18) {
-    errors.username = 'Required';
+    errors.username = 'Must be less than 18 characters';
   }
   if (!values.email) {
     errors.email = 'Required';

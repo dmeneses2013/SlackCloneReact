@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     color: '#fff',
     ':after': {
       position: 'absolute',
-      top: '12px',
-      bottom: '12px',
+      top: '8px',
+      bottom: '8px',
       left: '0',
       width: '3px',
       background: 'rgba(255,255,255,.2)',

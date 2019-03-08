@@ -57,7 +57,7 @@ render() {
             <ul>
               {presentUsers.map(user =>
                 <li key={user.id}>
-                  <span>{user.username} </span>
+                  <span><span className="dot">● </span>{user.username} </span>
                 </li>
               )}
           </ul>

@@ -6,7 +6,6 @@ import mapKeys from 'lodash/mapKeys';
 import Message from '../Message';
 import './index.scss';
 
-
 type MessageType = {
   id: number,
   inserted_at: string,
@@ -31,7 +30,7 @@ class MessageList extends Component {
     var a = this.stayScrolledElem.scrollTop
     var b = this.stayScrolledElem.scrollHeight - this.stayScrolledElem.clientHeight;
     var c = a / b;
-    let shouldScroll = (c > 0.90)
+    let shouldScroll = (c > 0.55)
     if (shouldScroll) {
       this.scrollToBottom();
     }
@@ -48,7 +47,6 @@ class MessageList extends Component {
 
 
   renderDays() {
-
     const { messages } = this.props;
     messages.map(message => message.day = moment(message.inserted_at).format('MMMM Do'));
     const dayGroups = groupBy(messages, 'day');

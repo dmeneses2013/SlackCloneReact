@@ -9,13 +9,11 @@ type Props = {
 }
 
 class NewRoomForm extends Component {
-  props: Props
 
   handleSubmit = data => this.props.onSubmit(data);
 
   render() {
     const { handleSubmit, submitting } = this.props;
-
     return (
       <form onSubmit={handleSubmit(this.handleSubmit)}>
         <div className="input-group">
