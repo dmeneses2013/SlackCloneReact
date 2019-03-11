@@ -33,7 +33,7 @@ class RoomSidebar extends Component {
   }
 
 render() {
-  const {room ,currentUser, roomName, presentUsers, currentUserRoomIds,roomList, onRoomJoin, onRoomClick } = this.props;
+  const {currentUser, presentUsers, roomList } = this.props;
   return(
       <div className={"room-sidebar"}>
         <div className={"header"}>

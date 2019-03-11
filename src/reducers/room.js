@@ -1,5 +1,3 @@
-const JSON = require('circular-json');
-
 const initialState = {
   channel: null,
   currentRoom: {},

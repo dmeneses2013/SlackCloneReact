@@ -14,7 +14,7 @@ type Props = {
 const Avatar = ({ size = 40, style, user, image }: Props) => {
   return (
     <img
-      class={"avatar"}
+      className={"avatar"}
       src={image}
       style={{ width: `${size}px`, height: `${size}px`, borderRadius: '4px', ...style }}
     />

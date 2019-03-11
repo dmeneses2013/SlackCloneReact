@@ -1,6 +1,5 @@
 // @flow
 import React, { Component }  from 'react';
-import ReactDOM from 'react';
 import { connect } from 'react-redux';
 import { connectToChannel, leaveChannel, createMessage, loadOlderMessages } from '../../actions/room';
 import MessageList from '../../components/MessageList';

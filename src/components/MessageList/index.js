@@ -1,5 +1,5 @@
 // @flow
-import React, { useRef, Component } from 'react';
+import React, { Component } from 'react';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import mapKeys from 'lodash/mapKeys';
@@ -57,8 +57,8 @@ class MessageList extends Component {
     const today = moment().format('MMMM Do');
     const yesterday = moment().subtract(1, 'days').format('MMMM Do');
     return days.map(day =>
-      <div className={"inner"}>
-      <div key={day.date} className={"messages-list"} ref={c => { this.stayScrolledElem = c; }}>
+      <div key={day.date} className={"inner"}>
+      <div className={"messages-list"} ref={c => { this.stayScrolledElem = c; }}>
         <div className={"daydivider"}>
           <span className={"daytext"}>
             {day.date === today && 'Today'}

@@ -4,7 +4,7 @@ import api from '../api';
 import { fetchUserRooms } from './rooms';
 import { connectToChannel } from './room';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://intense-plateau-37336.herokuapp.com/";
 const WEBSOCKET_URL = API_URL.replace(/(https|http)/, 'ws').replace('/api', '');
 
 

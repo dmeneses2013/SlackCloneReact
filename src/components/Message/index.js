@@ -25,9 +25,9 @@ const Message = ({ message: { text, inserted_at, user } }: Props) =>
         <time style={{ fontSize: '12px', color: 'rgb(192,192,192)' }}>{moment(inserted_at).format('h:mm A')}</time>
       </div>
       {text.includes("giphy.com/media")?
-        <img src={text} style={{ marginTop: '10px' }}/>
+        <img src={text} alt={"w.com./oops"} style={{ marginTop: '10px' }}/>
         :
-        <div class="message-text">{text}</div>
+        <div className="message-text">{text}</div>
 
         }
     </div>
