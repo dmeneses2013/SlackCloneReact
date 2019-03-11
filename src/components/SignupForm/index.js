@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { css, StyleSheet } from 'aphrodite';
 import Input from '../Input';
-import SignupAvatars from '../SignupAvatars';
 import './index.scss';
 
 const styles = StyleSheet.create({
@@ -31,20 +30,27 @@ class SignupForm extends Component {
   }
 
   handleSubmit = (data) => {
-    data.image = this.state.image;
+    data.image = this.addAvatar();
     this.props.onSubmit(data);
   }
 
-  addAvatar = url => {
-    this.setState({image: url})
-}
+  addAvatar = () => {
+    const maxUrls = 9;
+    let random = this.getRandomInt(9);
+    let image = "https://s3-ap-southeast-2.amazonaws.com/slackclonedm/slack" + random +  ".png";
+    return image;
+  }
+
+  getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
 
   render() {
     const { handleSubmit, submitting } = this.props;
 
+
     return (
       <div className="login-form">
-        <SignupAvatars onClick={this.addAvatar} />
       <form
         className={"card"}
         onSubmit={handleSubmit(this.handleSubmit)}
