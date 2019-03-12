@@ -1,4 +1,4 @@
-const API = "https://intense-plateau-37336.herokuapp.com";
+const API = "https://intense-plateau-37336.herokuapp.com/api";
 
 function headers() {
   const token = JSON.parse(localStorage.getItem('token'));

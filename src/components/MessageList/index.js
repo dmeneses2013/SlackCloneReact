@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React, { useRef, Component } from 'react';
 import moment from 'moment';
 import groupBy from 'lodash/groupBy';
 import mapKeys from 'lodash/mapKeys';
@@ -30,7 +30,7 @@ class MessageList extends Component {
     var a = this.stayScrolledElem.scrollTop
     var b = this.stayScrolledElem.scrollHeight - this.stayScrolledElem.clientHeight;
     var c = a / b;
-    let shouldScroll = (c > 0.55)
+    let shouldScroll = (c > 0.90)
     if (shouldScroll) {
       this.scrollToBottom();
     }
@@ -43,7 +43,7 @@ class MessageList extends Component {
   }
 
   renderMessages = messages =>
-    messages.map(message => <Message key={message.id} message={message} />);
+    messages.map(message => <Message key={message.id} message={message} className={"day-message"}/>);
 
 
   renderDays() {
@@ -57,8 +57,8 @@ class MessageList extends Component {
     const today = moment().format('MMMM Do');
     const yesterday = moment().subtract(1, 'days').format('MMMM Do');
     return days.map(day =>
-      <div key={day.date} className={"inner"}>
-      <div className={"messages-list"} ref={c => { this.stayScrolledElem = c; }}>
+      <div key={day.date} className={"day-section"}>
+        <div className={"day-subsection"}>
         <div className={"daydivider"}>
           <span className={"daytext"}>
             {day.date === today && 'Today'}
@@ -67,9 +67,6 @@ class MessageList extends Component {
           </span>
         </div>
         {this.renderMessages(day.messages)}
-        <div style={{ float:"left", clear: "both" }}
-             ref={(el) => { this.messagesEnd = el; }}>
-        </div>
         </div>
       </div>
     );
@@ -77,8 +74,15 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className={"messages-container"}>
+      <div className={"messages-container"} ref={c => { this.stayScrolledElem = c; }}>
+      <div className={"inner"}>
         {this.renderDays()}
+        <div
+            ref={(el) => { this.messagesEnd = el; }}
+            className={"message-end"}
+             >
+        </div>
+        </div>
       </div>
     );
   }

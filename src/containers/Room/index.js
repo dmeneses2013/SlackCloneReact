@@ -3,6 +3,7 @@ import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import { connectToChannel, leaveChannel, createMessage, loadOlderMessages } from '../../actions/room';
 import MessageList from '../../components/MessageList';
+import Messages from '../../components/Messages';
 import MessageForm from '../../components/MessageForm';
 import RoomNavbar from '../../components/RoomNavbar';
 import RoomSidebar from '../../components/RoomSidebar';
@@ -84,7 +85,7 @@ class Room extends Component {
       let props = this.props;
       giphy.random(symbol).then(function (res) {
         if (res.data.images) {
-          data.text = res.data.images.original.url
+          data.text = res.data.images.fixed_height.url
           props.createMessage(channel, data);
         }
       });
