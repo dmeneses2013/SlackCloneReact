@@ -3,7 +3,6 @@ import React, { Component }  from 'react';
 import { connect } from 'react-redux';
 import { connectToChannel, leaveChannel, createMessage, loadOlderMessages } from '../../actions/room';
 import MessageList from '../../components/MessageList';
-import Messages from '../../components/Messages';
 import MessageForm from '../../components/MessageForm';
 import RoomNavbar from '../../components/RoomNavbar';
 import RoomSidebar from '../../components/RoomSidebar';
