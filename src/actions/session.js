@@ -5,7 +5,7 @@ import { fetchUserRooms } from './rooms';
 import { connectToChannel } from './room';
 
 const API_URL = "https://intense-plateau-37336.herokuapp.com/api";
-const WEBSOCKET_URL = API_URL.replace(/(https|http)/, 'ws').replace('/api', '');
+const WEBSOCKET_URL = API_URL.replace(/(https|http)/, 'wss').replace('/api', '');
 
 
 function connectToSocket(dispatch) {
